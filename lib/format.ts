@@ -32,7 +32,7 @@ export function shortHkd(v: number, lang: Lang): string {
   }
   if (abs >= 1_000_000_000) return `${sign}HK$${(abs / 1_000_000_000).toFixed(2)}B`;
   if (abs >= 1_000_000) return `${sign}HK$${(abs / 1_000_000).toFixed(2)}M`;
-  if (abs >= 1_000) return `${sign}HK$${(abs / 1_000).toFixed(0)}k`;
+  if (abs >= 1_000) return `${sign}HK$${(abs / 1_000).toFixed(abs < 100_000 ? 1 : 0)}k`;
   return `${sign}HK$${grouped(abs)}`;
 }
 
